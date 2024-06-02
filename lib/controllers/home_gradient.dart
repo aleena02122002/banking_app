@@ -13,6 +13,9 @@ import 'package:flutter/material.dart';
 //     );
 //   }
 // }
-class colorGradient{
-  static LinearGradient colorsScaffold = LinearGradient(colors: [Color(0xFF828689),Color(0xFF4F5962),Color(0xFF1F2F3C)]);
+class colorGradient {
+  static LinearGradient colorsScaffold = LinearGradient(
+      colors: [Color(0xFF828689), Color(0xFF4F5962), Color(0xFF1F2F3C)],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight);
 }
