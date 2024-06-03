@@ -1,4 +1,3 @@
-
 import 'package:application/controllers/bottomStyleSheet.dart';
 import 'package:application/controllers/home_gradient.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +41,6 @@ class _HomeViewState extends State<HomeView> {
                   child: const Icon(Icons.notifications, color: Colors.white),
                 ),
               ),
-
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: ClipOval(
@@ -68,36 +66,36 @@ class _HomeViewState extends State<HomeView> {
         child: SafeArea(
           child: Center(
             child: Column(
-          
               children: [
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.0,vertical: 5.0),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: Column(
-                        children: [
-                          Text(
-                            "Welcome,",
-                            style: TextStyle(
-                              fontSize: 20,
-                              // fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 5.0),
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Column(
+                      children: [
+                        Text(
+                          "Welcome,",
+                          style: TextStyle(
+                            fontSize: 20,
+                            // fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
-                          Text(
-                            "Name",
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
+                        ),
+                        Text(
+                          "Name",
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
+                ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 8.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 8.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -106,18 +104,52 @@ class _HomeViewState extends State<HomeView> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Container(
                               height: 150,
                               width: 170,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Colors.white.withOpacity(0.2),
+                                color: Colors.white.withOpacity(0.1),
+                              ),
+                              child: Row(
+                                children: [
+                                SingleChildScrollView(
+                                  child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(vertical: 7.0,horizontal: 10.0),
+                                            child: Text("Rs 800.65",style: TextStyle(color: Colors.white),),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(vertical: 50.0),
+                                            child: Text("Balance",style: TextStyle(color: Colors.white),),
+                                          ),
+                                        ],
+                                      ),
+                                ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                                    child: Align(
+                                      alignment: Alignment.topRight,
+                                          child: ClipOval(
+                                            child: Image.asset(
+                                                "assets/images/arrow.png",width: 40,height: 40,),
+                                          ),
+                                    ),
+                                  ),
+
+
+                                  
+
+                                ],
                               ),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Container(
                               height: 150,
                               width: 170,
@@ -134,7 +166,8 @@ class _HomeViewState extends State<HomeView> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Container(
                               height: 150,
                               width: 170,
@@ -145,7 +178,8 @@ class _HomeViewState extends State<HomeView> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Container(
                               height: 150,
                               width: 170,
