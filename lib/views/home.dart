@@ -14,7 +14,6 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      // bottomSheet: BottomSheets(child: Text('data')),
       appBar: AppBar(
         forceMaterialTransparency: true,
         leading: Container(
@@ -47,10 +46,6 @@ class _HomeViewState extends State<HomeView> {
                   child: Container(
                     width: 40,
                     height: 40,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      // color: Colors.white.withOpacity(0.1),
-                    ),
                     child: Image.asset("assets/images/profile2.jpg"),
                   ),
                 ),
@@ -77,7 +72,6 @@ class _HomeViewState extends State<HomeView> {
                           "Welcome,",
                           style: TextStyle(
                             fontSize: 20,
-                            // fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
                         ),
@@ -94,8 +88,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 8.0, vertical: 8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -103,144 +96,16 @@ class _HomeViewState extends State<HomeView> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Container(
-                              height: 150,
-                              width: 170,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.white.withOpacity(0.1),
-                              ),
-                              child: Row(
-                                children: [
-                                  Column(
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(vertical: 7.0,horizontal: 10.0),
-                                            child: Column(
-                                              children: [
-                                                Text("Rs 800.65",style: TextStyle(color: Colors.white),),
-                                                Text("+20.65%",style: TextStyle(color: Colors.green),),
-                                              ],
-                                            ),
-                                          ),
-                                          SizedBox(height:70 ),
-                                          Text("Balance",style: TextStyle(color: Colors.white),),
-
-                                        ],
-                                      ),
-                                  SizedBox(width: 35,height: 10,),
-                                    Align(
-                                      alignment: Alignment.topRight,
-                                          child: ClipOval(
-                                            child: Image.asset(
-                                                "assets/images/arrow.png",width: 40,height: 40,),
-                                          ),
-                                    ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Container(
-                              height: 150,
-                              width: 170,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.white.withOpacity(0.1),
-                              ),
-                              child: Row(
-                                children: [
-                                  Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(vertical: 7.0,horizontal: 10.0),
-                                        child: Column(
-                                          children: [
-                                            Text("Rs 800.65",style: TextStyle(color: Colors.white),),
-                                            Text("+20.65%",style: TextStyle(color: Colors.green),),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(height:70 ),
-                                      Text("Balance",style: TextStyle(color: Colors.white),),
-
-                                    ],
-                                  ),
-                                  SizedBox(width: 35,height: 10,),
-                                  Align(
-                                    alignment: Alignment.topRight,
-                                    child: ClipOval(
-                                      child: Image.asset(
-                                        "assets/images/arrow.png",width: 40,height: 40,),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
+                          _buildCard("Rs 800.65", "+20.65%", "Balance", Colors.green),
+                          _buildCard("Rs 800.65", "+20.50%", "Income", Colors.green),
                         ],
                       ),
                       const SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Container(
-                              height: 150,
-                              width: 170,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.white.withOpacity(0.2),
-                              ),
-                              child: Row(
-                                children: [
-                                  Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(vertical: 7.0,horizontal: 10.0),
-                                        child: Column(
-                                          children: [
-                                            Text("Rs 800.65",style: TextStyle(color: Colors.white),),
-                                            Text("+20.65%",style: TextStyle(color: Colors.green),),
-                                          ],
-                                        ),
-                                      ),
-                                      SizedBox(height:70 ),
-                                      Text("Balance",style: TextStyle(color: Colors.white),),
-
-                                    ],
-                                  ),
-                                  SizedBox(width: 35,height: 10,),
-                                  Align(
-                                    alignment: Alignment.topRight,
-                                    child: ClipOval(
-                                      child: Image.asset(
-                                        "assets/images/arrow.png",width: 40,height: 40,),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Container(
-                              height: 150,
-                              width: 170,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.white.withOpacity(0.2),
-                              ),
-                            ),
-                          ),
+                          _buildCard("Rs 800.65", "-18.50%", "Expense", Colors.redAccent),
+                          _buildAddWidgetCard(),
                         ],
                       ),
                     ],
@@ -249,6 +114,88 @@ class _HomeViewState extends State<HomeView> {
               ],
             ),
           ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) {
+              return BottomSheets(child: Text("Sheets"));
+            },
+          );
+        },
+        child: Icon(Icons.add,color: Colors.white,),
+        backgroundColor: Colors.white.withOpacity(0.2),
+      ),
+    );
+  }
+
+  Widget _buildCard(String amount, String percentage, String label, Color percentageColor) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Container(
+        height: 150,
+        width: 170,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: Colors.white.withOpacity(0.1),
+        ),
+        child: Row(
+          children: [
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 7.0, horizontal: 10.0),
+                  child: Column(
+                    children: [
+                      Text(amount, style: TextStyle(color: Colors.white)),
+                      Text(percentage, style: TextStyle(color: percentageColor)),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 70),
+                Text(label, style: TextStyle(color: Colors.white)),
+              ],
+            ),
+            SizedBox(width: 35, height: 10),
+            Align(
+              alignment: Alignment.topRight,
+              child: ClipOval(
+                child: Image.asset("assets/images/arrow.png", width: 40, height: 40),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAddWidgetCard() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Container(
+        height: 150,
+        width: 170,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: Colors.white.withOpacity(0.1),
+        ),
+        child: Column(
+          children: [
+            SizedBox(height: 30.0),
+            Container(
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: Colors.white.withOpacity(0.2),
+              ),
+              child: Icon(Icons.add, color: Colors.white),
+            ),
+            SizedBox(height: 20),
+            Text("Add Widget", style: TextStyle(color: Colors.white)),
+          ],
         ),
       ),
     );
