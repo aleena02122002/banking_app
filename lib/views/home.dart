@@ -115,34 +115,30 @@ class _HomeViewState extends State<HomeView> {
                               ),
                               child: Row(
                                 children: [
-                                SingleChildScrollView(
-                                  child: Column(
+                                  Column(
                                         children: [
                                           Padding(
                                             padding: const EdgeInsets.symmetric(vertical: 7.0,horizontal: 10.0),
-                                            child: Text("Rs 800.65",style: TextStyle(color: Colors.white),),
+                                            child: Column(
+                                              children: [
+                                                Text("Rs 800.65",style: TextStyle(color: Colors.white),),
+                                                Text("+20.65%",style: TextStyle(color: Colors.green),),
+                                              ],
+                                            ),
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(vertical: 50.0),
-                                            child: Text("Balance",style: TextStyle(color: Colors.white),),
-                                          ),
+                                          SizedBox(height:70 ),
+                                          Text("Balance",style: TextStyle(color: Colors.white),),
+
                                         ],
                                       ),
-                                ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                                    child: Align(
+                                  SizedBox(width: 35,height: 10,),
+                                    Align(
                                       alignment: Alignment.topRight,
                                           child: ClipOval(
                                             child: Image.asset(
                                                 "assets/images/arrow.png",width: 40,height: 40,),
                                           ),
                                     ),
-                                  ),
-
-
-                                  
-
                                 ],
                               ),
                             ),
@@ -155,7 +151,35 @@ class _HomeViewState extends State<HomeView> {
                               width: 170,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Colors.white.withOpacity(0.2),
+                                color: Colors.white.withOpacity(0.1),
+                              ),
+                              child: Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(vertical: 7.0,horizontal: 10.0),
+                                        child: Column(
+                                          children: [
+                                            Text("Rs 800.65",style: TextStyle(color: Colors.white),),
+                                            Text("+20.65%",style: TextStyle(color: Colors.green),),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(height:70 ),
+                                      Text("Balance",style: TextStyle(color: Colors.white),),
+
+                                    ],
+                                  ),
+                                  SizedBox(width: 35,height: 10,),
+                                  Align(
+                                    alignment: Alignment.topRight,
+                                    child: ClipOval(
+                                      child: Image.asset(
+                                        "assets/images/arrow.png",width: 40,height: 40,),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -174,6 +198,34 @@ class _HomeViewState extends State<HomeView> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
                                 color: Colors.white.withOpacity(0.2),
+                              ),
+                              child: Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(vertical: 7.0,horizontal: 10.0),
+                                        child: Column(
+                                          children: [
+                                            Text("Rs 800.65",style: TextStyle(color: Colors.white),),
+                                            Text("+20.65%",style: TextStyle(color: Colors.green),),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(height:70 ),
+                                      Text("Balance",style: TextStyle(color: Colors.white),),
+
+                                    ],
+                                  ),
+                                  SizedBox(width: 35,height: 10,),
+                                  Align(
+                                    alignment: Alignment.topRight,
+                                    child: ClipOval(
+                                      child: Image.asset(
+                                        "assets/images/arrow.png",width: 40,height: 40,),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
