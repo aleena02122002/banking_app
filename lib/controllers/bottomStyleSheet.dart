@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BottomSheets extends StatefulWidget {
-  final Widget child;
-  const BottomSheets({Key? key, required this.child}) : super(key: key);
+  // final Widget child;
+  const BottomSheets({Key? key}) : super(key: key);
 
   @override
   State<BottomSheets> createState() => _BottomSheetsState();

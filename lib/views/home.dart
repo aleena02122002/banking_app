@@ -1,3 +1,4 @@
+import 'package:application/controllers/bottomNavigation.dart';
 import 'package:application/controllers/bottomStyleSheet.dart';
 import 'package:application/controllers/home_gradient.dart';
 import 'package:flutter/material.dart';
@@ -116,18 +117,18 @@ class _HomeViewState extends State<HomeView> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showModalBottomSheet(
-            context: context,
-            builder: (context) {
-              return BottomSheets(child: Text("Sheets"));
-            },
-          );
-        },
-        child: Icon(Icons.add,color: Colors.white,),
-        backgroundColor: Colors.white.withOpacity(0.2),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     showModalBottomSheet(
+      //       context: context,
+      //       builder: (context) {
+      //         return BottomSheets(child: Text("Sheets"));
+      //       },
+      //     );
+      //   },
+      //   child: Icon(Icons.add,color: Colors.white,),
+      //   backgroundColor: Colors.white.withOpacity(0.2),
+      // ),
     );
   }
 
