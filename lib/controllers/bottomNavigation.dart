@@ -44,7 +44,6 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                 icon: Icon(Icons.credit_card),
                 label: '',
               ),
-              SizedBox(width: 10,),
               NavigationDestination(
                 icon: Icon(Icons.add),
                 label: '',
