@@ -2,6 +2,7 @@ import 'package:application/controllers/bottomNavigation.dart';
 import 'package:application/controllers/bottomStyleSheet.dart';
 import 'package:application/controllers/home_gradient.dart';
 import 'package:application/utils/Container.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
@@ -124,6 +125,8 @@ class _HomeViewState extends State<HomeView> {
                       ],
                     ),
                   ),
+                  SizedBox(height: 265,),
+                 MyNavigationBar(),
                 ],
               ),
             ),
