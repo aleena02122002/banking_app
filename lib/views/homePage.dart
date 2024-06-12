@@ -1,4 +1,4 @@
-import 'package:application/controllers/bottomNavigation.dart';
+import 'package:application/utils/bottomNavigation.dart';
 import 'package:application/views/home.dart';
 import 'package:flutter/material.dart';
 

@@ -1,4 +1,5 @@
 import 'package:application/controllers/bottomStyleSheet.dart';
+import 'package:application/views/Cards.dart';
 import 'package:application/views/graph.dart';
 import 'package:application/views/home.dart';
 import 'package:flutter/material.dart';
@@ -53,9 +54,22 @@ import 'package:flutter/material.dart';
 //     );
 //   }
 // }
-class MyNavigationBar extends StatelessWidget {
+class MyNavigationBar extends StatefulWidget {
   const MyNavigationBar({super.key});
 
+  @override
+  State<MyNavigationBar> createState() => _MyNavigationBarState();
+}
+
+class _MyNavigationBarState extends State<MyNavigationBar> {
+  int index = 0;
+
+  final screens= [
+    HomeView(),
+    GraphView(),
+    Cards(),
+
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -68,7 +82,9 @@ class MyNavigationBar extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [],
+        children: [
+
+        ],
       ),
     );
   }
