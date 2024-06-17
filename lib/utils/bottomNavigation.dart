@@ -77,15 +77,15 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
   ];
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(30),
-      child: Container(
+    return Container(
         margin: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
             color: Colors.white38,
           )
-        ]),
+        ],
+        borderRadius: BorderRadius.circular(30)
+        ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30),
           child: BottomNavigationBar(
@@ -93,9 +93,9 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
               selectedItemColor: Colors.white,
               unselectedItemColor: Colors.white30,
               currentIndex: index,
-              onTap: (index){
+              onTap: (int newIndex) {
                 setState(() {
-                  index =index;
+                  index = newIndex;
                 });
               },
               items: [
@@ -107,7 +107,6 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                     icon: Icon(Icons.credit_card_rounded), label: "Cards"),
               ]),
         ),
-      ),
-    );
+      );
   }
 }
