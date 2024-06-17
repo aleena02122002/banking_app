@@ -1,6 +1,7 @@
-import 'package:application/utils/bottomNavigation.dart';
+
 import 'package:application/controllers/home_gradient.dart';
 import 'package:application/utils/Container.dart';
+import 'package:application/utils/bottomNavigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -23,122 +24,122 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: true,
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          forceMaterialTransparency: true,
-          leading: Container(
-            width: 20,
-            height: 20,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              color: Colors.white.withOpacity(0.1),
-            ),
-            child: const Icon(Icons.add, color: Colors.white),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: colorGradient.colorsScaffold,
           ),
-          actions: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: Colors.white.withOpacity(0.1),
-                    ),
-                    child: const Icon(Icons.notifications, color: Colors.white),
-                  ),
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            bottomNavigationBar: MyNavigationBar(),
+            resizeToAvoidBottomInset: true,
+            extendBodyBehindAppBar: true,
+            appBar: AppBar(
+              forceMaterialTransparency: true,
+              leading: Container(
+                width: 20,
+                height: 20,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: Colors.white.withOpacity(0.1),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: ClipOval(
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      child: Image.asset("assets/images/profile2.jpg"),
-                    ),
-                  ),
-                ),
-              ],
-            )
-          ],
-        ),
-        body: SingleChildScrollView(
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: colorGradient.colorsScaffold,
-            ),
-            child: SafeArea(
-              child: Center(
-                child: Column(
+                child: const Icon(Icons.add, color: Colors.white),
+              ),
+              actions: [
+                Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 5.0),
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Welcome,",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text(
-                              "Name",
-                              style: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          color: Colors.white.withOpacity(0.1),
+                        ),
+                        child: const Icon(Icons.notifications, color: Colors.white),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: ClipOval(
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          child: Image.asset("assets/images/profile2.jpg"),
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Row(
+                  ],
+                )
+              ],
+            ),
+            body: SingleChildScrollView(
+                child: SafeArea(
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 5.0),
+                          child: Align(
+                            alignment: Alignment.topLeft,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Welcome,",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  "Name",
+                                  style: TextStyle(
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+                          child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              HomeContainer(
-                                  amount: "Rs 800.65",
-                                  percentage: "20.65%",
-                                  label: "Balance",
-                                  percentageColor: Colors.green),
-                              HomeContainer(
-                                  amount: "Rs 800.65",
-                                  percentage: "20.50%",
-                                  label: "Income",
-                                  percentageColor: Colors.green),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  HomeContainer(
+                                      amount: "Rs 800.65",
+                                      percentage: "20.65%",
+                                      label: "Balance",
+                                      percentageColor: Colors.green),
+                                  HomeContainer(
+                                      amount: "Rs 800.65",
+                                      percentage: "20.50%",
+                                      label: "Income",
+                                      percentageColor: Colors.green),
+                                ],
+                              ),
+                              SizedBox(height: 10),
+                              Column(
+                                children: _buildRows(),
+                              ),
+                              SizedBox(height: 10),
                             ],
                           ),
-                          SizedBox(height: 10),
-                          Column(
-                            children: _buildRows(),
-                          ),
-                          SizedBox(height: 10),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    SizedBox(height: 265),
-                    MyNavigationBar(),
-                  ],
+                  ),
                 ),
-              ),
-            ),
           ),
+                ),
         ),
-      ),
     );
   }
 

@@ -64,27 +64,49 @@ class MyNavigationBar extends StatefulWidget {
 class _MyNavigationBarState extends State<MyNavigationBar> {
   int index = 0;
 
-  final screens= [
+  List<IconData> navIcons = [
+    Icons.home_outlined,
+    Icons.bar_chart,
+    Icons.credit_card_outlined
+  ];
+
+  final screens = [
     HomeView(),
     GraphView(),
     Cards(),
-
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 65,
-      margin: EdgeInsets.only(right: 24,left: 24,bottom: 24),
-      decoration: BoxDecoration(
-        color: Colors.white38,
-        borderRadius: BorderRadius.circular(40)
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-
-        ],
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(30),
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+            color: Colors.white38,
+          )
+        ]),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+          child: BottomNavigationBar(
+              backgroundColor: Colors.white54,
+              selectedItemColor: Colors.white,
+              unselectedItemColor: Colors.white30,
+              currentIndex: index,
+              onTap: (index){
+                setState(() {
+                  index =index;
+                });
+              },
+              items: [
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.home_outlined), label: "Home", ),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.bar_chart), label: "Graph"),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.credit_card_rounded), label: "Cards"),
+              ]),
+        ),
       ),
     );
   }

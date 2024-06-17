@@ -6,8 +6,10 @@ class Cards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: Colors.white38,
       appBar: AppBar(
-        leading: Text("My Card"),
+        leading: Text("My Cards"),
         actions: [
           Container(
             height: 60,
@@ -16,7 +18,7 @@ class Cards extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
               color: Colors.white.withOpacity(0.2),
             ),
-            child: Icon(Icons.arrow_back, color: Colors.white),
+            child: Icon(Icons.arrow_back, color: Colors.black),
           ),
         ],
       ),
