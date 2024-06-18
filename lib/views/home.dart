@@ -1,4 +1,5 @@
 
+import 'package:application/controllers/bottomStyleSheet.dart';
 import 'package:application/controllers/home_gradient.dart';
 import 'package:application/utils/Container.dart';
 import 'package:application/utils/bottomNavigation.dart';
@@ -29,8 +30,8 @@ class _HomeViewState extends State<HomeView> {
             gradient: colorGradient.colorsScaffold,
           ),
           child: Scaffold(
+            extendBody: true,
             backgroundColor: Colors.transparent,
-            bottomNavigationBar: MyNavigationBar(),
             resizeToAvoidBottomInset: true,
             extendBodyBehindAppBar: true,
             appBar: AppBar(
@@ -74,68 +75,73 @@ class _HomeViewState extends State<HomeView> {
               ],
             ),
             body: SingleChildScrollView(
-                child: SafeArea(
-                  child: Center(
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 5.0),
-                          child: Align(
-                            alignment: Alignment.topLeft,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [SafeArea(
+                    child: Center(
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 5.0),
+                            child: Align(
+                              alignment: Alignment.topLeft,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Welcome,",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Name",
+                                    style: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text(
-                                  "Welcome,",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                  ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    HomeContainer(
+                                        amount: "Rs 800.65",
+                                        percentage: "20.65%",
+                                        label: "Balance",
+                                        percentageColor: Colors.green),
+                                    HomeContainer(
+                                        amount: "Rs 800.65",
+                                        percentage: "20.50%",
+                                        label: "Income",
+                                        percentageColor: Colors.green),
+                                  ],
                                 ),
-                                Text(
-                                  "Name",
-                                  style: TextStyle(
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
+                                SizedBox(height: 10),
+                                Column(
+                                  children: _buildRows(),
                                 ),
+                                SizedBox(height: 10),
                               ],
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  HomeContainer(
-                                      amount: "Rs 800.65",
-                                      percentage: "20.65%",
-                                      label: "Balance",
-                                      percentageColor: Colors.green),
-                                  HomeContainer(
-                                      amount: "Rs 800.65",
-                                      percentage: "20.50%",
-                                      label: "Income",
-                                      percentageColor: Colors.green),
-                                ],
-                              ),
-                              SizedBox(height: 10),
-                              Column(
-                                children: _buildRows(),
-                              ),
-                              SizedBox(height: 10),
-                            ],
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
+                    StyleSheets(),
+                  ],
                 ),
           ),
                 ),

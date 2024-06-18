@@ -1,25 +1,34 @@
+import 'package:application/controllers/listItems.dart';
 import 'package:flutter/material.dart';
+import 'debitClass.dart';
 
-class BottomSheets extends StatefulWidget {
-  // final Widget child;
-  const BottomSheets({Key? key}) : super(key: key);
+class StyleSheets extends StatefulWidget {
+  const StyleSheets({super.key});
 
   @override
-  State<BottomSheets> createState() => _BottomSheetsState();
+  State<StyleSheets> createState() => _StyleSheetsState();
 }
 
-class _BottomSheetsState extends State<BottomSheets> {
+class _StyleSheetsState extends State<StyleSheets> {
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
-      builder: (BuildContext context, ScrollController scrollController) {
-        return Container(
-
-        );
-      },
-      initialChildSize: 0.5, // The initial size of the sheet when created
-      minChildSize: 0.25, // The minimum size of the sheet
-      maxChildSize: 1.0, // The maximum size of the sheet
+      builder: (context, controller) => Container(
+        color: Colors.white70,
+        child: ListView.builder(
+          controller: controller,
+          itemCount: debitList.length,
+          itemBuilder: (context, index) {
+            final debit = debitList[index];
+            return buildDebitItem(debit);
+          },
+        ),
+      ),
     );
   }
+
+  Widget buildDebitItem(DebitItem debit) => ListTile(
+    title: Text(debit.title,style: TextStyle(fontSize: 24),),
+    subtitle: Text(debit.price),
+  );
 }
