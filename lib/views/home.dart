@@ -75,9 +75,7 @@ class _HomeViewState extends State<HomeView> {
               ],
             ),
             body: SingleChildScrollView(
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [SafeArea(
+                child:SafeArea(
                     child: Center(
                       child: Column(
                         children: [
@@ -140,9 +138,6 @@ class _HomeViewState extends State<HomeView> {
                       ),
                     ),
                   ),
-                    StyleSheets(),
-                  ],
-                ),
           ),
                 ),
         ),

@@ -1,5 +1,6 @@
 
 import 'package:application/views/Cards.dart';
+import 'package:application/views/graph.dart';
 import 'package:application/views/home.dart';
 import 'package:application/views/homePage.dart';
 import 'package:application/views/login.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: GraphView(),
     );
   }
 }
