@@ -21,6 +21,7 @@ class MyBarGraph extends StatelessWidget {
         octMonth: monthlySummary[10],
         navMonth: monthlySummary[11],
         decemberMonth: monthlySummary[12]);
+    myBarData.initializeBarData();
     return BarChart(BarChartData(
       maxY: 100,
       minY: 0,
