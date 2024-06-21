@@ -10,7 +10,7 @@ class GraphView extends StatefulWidget {
 }
 
 class _GraphViewState extends State<GraphView> {
-  List<double> monthySum = [10, 8, 65.42, 45.50, 50.20, 52.99, 35.10];
+  List<double> monthySum = [26, 21, 65.42, 45.50, 50.20, 52.99, 35.10];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
