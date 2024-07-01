@@ -1,7 +1,10 @@
 
 import 'package:application/controllers/textEditting.dart';
+import 'package:application/views/home.dart';
+import 'package:application/views/homePage.dart';
 import 'package:application/views/register.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({super.key});
@@ -88,7 +91,7 @@ class LoginView extends StatelessWidget {
                     width: 200,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Add your login logic here
+                        Get.to(HomePage());
                       },
                       child: const Text(
                         "Signin",

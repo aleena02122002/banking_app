@@ -1,6 +1,7 @@
 import 'package:application/controllers/home_gradient.dart';
 import 'package:application/utils/Container.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Cards extends StatelessWidget {
   final ScrollController _scrollController = ScrollController();
@@ -25,9 +26,9 @@ class Cards extends StatelessWidget {
                   width: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: Colors.white.withOpacity(0.2),
+                    color: Colors.white,
                   ),
-                  child: const Icon(Icons.arrow_back, color: Colors.black),
+                  child:  IconButton(onPressed: (){Get.back();}, icon: Icon(Icons.arrow_back, color: Colors.black)),
                 ),
               ],
             ),
@@ -39,8 +40,8 @@ class Cards extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        const CardsContainer(amount: "Rs 15,000.00", percentage: "8426 9823 0957 3674", label: "Balance", percentageColor: Color(0xFF1F2F3C),expDate: "12/24",),
-                        CardsContainer(amount: "Rs 15,000.00", percentage: "8426 9823 0957 3674", label: "Balance", percentageColor: Colors.grey.shade400,expDate: "09/25",),
+                        const CardsContainer(amount: "Rs 1,000.00", percentage: "8426 9823 0957 3674", label: "Balance", percentageColor: Color(0xFF1F2F3C),expDate: "12/24",),
+                        CardsContainer(amount: "Rs 25,000.00", percentage: "8475 7429 0052 1680", label: "Balance", percentageColor: Colors.grey.shade400,expDate: "09/25",),
                       ],
                     ),
                   ),
@@ -54,14 +55,14 @@ class Cards extends StatelessWidget {
                           scrollDirection: Axis.vertical,
                           child: const Column(
                             children: [
-                              CardListContainer(label: "Transctions",date: "31 May 2024",amount: "Rs -1000",),
-                              CardListContainer(label: "Shopping",date: "31 May 2024",amount: "Rs -8000",),
-                              CardListContainer(label: "Transctions",date: "31 May 2024",amount: "Rs -1000",),
-                              CardListContainer(label: "Transctions",date: "31 May 2024",amount: "Rs -1000",),
-                              CardListContainer(label: "Transctions",date: "31 May 2024",amount: "Rs -1000",),
-                              CardListContainer(label: "Transctions",date: "31 May 2024",amount: "Rs -1000",),
-                              CardListContainer(label: "Transctions",date: "31 May 2024",amount: "Rs -1000",),
-                              CardListContainer(label: "Transctions",date: "31 May 2024",amount: "Rs -1000",),
+                              CardListContainer(label: "Transction",date: "16 Jun 2024",amount: "Rs 20000",),
+                              CardListContainer(label: "Electric Bill",date: "16 Jun 2024",amount: "Rs 15000",),
+                              CardListContainer(label: "SSGC Bill",date: "16 Jun 2024",amount: " Rs 1000",),
+                              CardListContainer(label: "Cradit Card",date: "16 Jun 2024",amount: "Rs 8000",),
+                              CardListContainer(label: "Shopping",date: "20 May 2024",amount: "Rs 20000",),
+                              CardListContainer(label: "Transaction",date: "15 May 2024",amount: "Rs 12000",),
+                              CardListContainer(label: "Electric Bill",date: "15 May 2024",amount: "Rs 1000",),
+                              CardListContainer(label: "SSGC Bill",date: "15 May 2024",amount: "Rs 13000",),
                             ],
                           ),
                         ),
