@@ -1,4 +1,3 @@
-
 import 'package:application/controllers/textEditting.dart';
 import 'package:application/views/home.dart';
 import 'package:application/views/homePage.dart';
@@ -23,12 +22,9 @@ class LoginView extends StatelessWidget {
       body: Container(
         constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-            Color(0xFF828689),
-            Color(0xFF4F5962),
-            Color(0xFF1F2F3C)
-          ],
-          begin: Alignment.topCenter,
+          gradient: LinearGradient(
+            colors: [Color(0xFF828689), Color(0xFF4F5962), Color(0xFF1F2F3C)],
+            begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
         ),
@@ -109,20 +105,38 @@ class LoginView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 70,
+                    child: Row(children: <Widget>[
+                      Expanded(child: Divider()),
+                      Text(
+                        "Or Sign In with",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Expanded(child: Divider()),
+                    ]),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
                     child: Row(
-                        children: <Widget>[
-                          Expanded(
-                              child: Divider()
-                          ),
-
-                          Text("Or Sign In with",style: TextStyle(color: Colors.white),),
-
-                          Expanded(
-                              child: Divider()
-                          ),
-                        ]
+                      children: [
+                        Container(
+                            height: 70,
+                            width: 70,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                               ),
+                            child: Align(
+                              alignment: Alignment.topCenter,
+                              child: IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      Icons.facebook,
+                                      color: Colors.blue,size: 50,
+                                    )),
+                            ),
+                            ),
+                      ],
                     ),
                   )
                 ],
