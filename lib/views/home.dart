@@ -1,5 +1,7 @@
 
-import 'package:application/controllers/bottomStyleSheet.dart';
+import 'package:application/controllers/debitClass.dart';
+import 'package:application/controllers/listItems.dart';
+import 'package:application/utils/bottomStyleSheet.dart';
 import 'package:application/controllers/home_gradient.dart';
 import 'package:application/utils/Container.dart';
 import 'package:application/utils/bottomNavigation.dart';
@@ -26,120 +28,133 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Container(
+          height: double.infinity,
           decoration: BoxDecoration(
             gradient: colorGradient.colorsScaffold,
           ),
-          child: Scaffold(
-            extendBody: true,
-            backgroundColor: Colors.transparent,
-            resizeToAvoidBottomInset: true,
-            extendBodyBehindAppBar: true,
-            appBar: AppBar(
-              forceMaterialTransparency: true,
-              leading: Container(
-                width: 20,
-                height: 20,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Colors.white.withOpacity(0.1),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 25.0),
+            child: Scaffold(
+              // bottomNavigationBar: MyNavigationBar(),
+
+              backgroundColor: Colors.transparent,
+              resizeToAvoidBottomInset: true,
+              extendBodyBehindAppBar: true,
+              appBar: AppBar(
+                forceMaterialTransparency: true,
+                leading: Container(
+                  width: 20,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: Colors.white.withOpacity(0.1),
+                  ),
+                  child:  IconButton(onPressed: (){
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) => StyleSheets(),
+                    );
+                  }, icon: Icon(Icons.add, color: Colors.white)),
                 ),
-                child: const Icon(Icons.add, color: Colors.white),
-              ),
-              actions: [
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: Colors.white.withOpacity(0.1),
-                        ),
-                        child: const Icon(Icons.notifications, color: Colors.white),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: ClipOval(
+                actions: [
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Container(
                           width: 40,
                           height: 40,
-                          child: Image.asset("assets/images/profile2.jpg"),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            color: Colors.white.withOpacity(0.1),
+                          ),
+                          child: const Icon(Icons.notifications, color: Colors.white),
                         ),
                       ),
-                    ),
-                  ],
-                )
-              ],
-            ),
-            body: SingleChildScrollView(
-                child:SafeArea(
-                    child: Center(
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 5.0),
-                            child: Align(
-                              alignment: Alignment.topLeft,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Welcome,",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Text(
-                                    "Name",
-                                    style: TextStyle(
-                                      fontSize: 30,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: ClipOval(
+                          child: Container(
+                            width: 40,
+                            height: 40,
+                            child: Image.asset("assets/images/profile2.jpg"),
                           ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+              body:
+                  SingleChildScrollView(
+                      child:SafeArea(
+                          child: Center(
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    HomeContainer(
-                                        amount: "Rs 800.65",
-                                        percentage: "20.65%",
-                                        label: "Balance",
-                                        percentageColor: Colors.green),
-                                    HomeContainer(
-                                        amount: "Rs 800.65",
-                                        percentage: "20.50%",
-                                        label: "Income",
-                                        percentageColor: Colors.green),
-                                  ],
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 5.0),
+                                  child: Align(
+                                    alignment: Alignment.topLeft,
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Welcome,",
+                                          style: TextStyle(
+                                            fontSize: 20,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                        Text(
+                                          "Name",
+                                          style: TextStyle(
+                                            fontSize: 30,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                                SizedBox(height: 10),
-                                Column(
-                                  children: _buildRows(),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          HomeContainer(
+                                              amount: "Rs 800.65",
+                                              percentage: "20.65%",
+                                              label: "Balance",
+                                              percentageColor: Colors.green),
+                                          HomeContainer(
+                                              amount: "Rs 800.65",
+                                              percentage: "20.50%",
+                                              label: "Income",
+                                              percentageColor: Colors.green),
+                                        ],
+                                      ),
+
+                                      Column(
+                                        children: _buildRows(),
+                                      ),
+
+
+                                    ],
+                                  ),
                                 ),
-                                SizedBox(height: 10),
                               ],
                             ),
                           ),
-                        ],
-                      ),
-                    ),
+                        ),
+                            ),
+
                   ),
           ),
-                ),
         ),
     );
   }
@@ -307,3 +322,33 @@ class _AddWidgetState extends State<AddWidget> {
     );
   }
 }
+// class StyleSheets extends StatefulWidget {
+//   const StyleSheets({super.key});
+//
+//   @override
+//   State<StyleSheets> createState() => _StyleSheetsState();
+// }
+//
+// class _StyleSheetsState extends State<StyleSheets> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return DraggableScrollableSheet(
+//       builder: (context, controller) => ListView.builder(
+//           controller: controller,
+//           itemCount: debitList.length,
+//           itemBuilder: (context, index) {
+//             final debit = debitList[index];
+//             return buildDebitItem(debit);
+//           },
+//         ),
+//
+//     );
+//   }
+//
+//   Widget buildDebitItem(DebitItem debit) => ListTile(
+//     leading: Container(height: 40,width: 40,decoration: BoxDecoration(color: Colors.grey[350],borderRadius: BorderRadius.circular(40)),child: Icon(Icons.payment,color: Colors.white,)),
+//     title: Text(debit.title,style: TextStyle(fontSize: 20),),
+//     subtitle: Text(debit.price),
+//     trailing: Text("Rs 6000"),
+//   );
+// }

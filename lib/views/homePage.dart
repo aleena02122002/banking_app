@@ -17,11 +17,7 @@ class _HomePageState extends State<HomePage> {
       extendBody: true,
       backgroundColor: Colors.transparent,
         bottomNavigationBar: MyNavigationBar(),
-        body: Container(
-            decoration: BoxDecoration(
-              gradient: colorGradient.colorsScaffold,
-            ),
-            child: HomeView()),
+        body: HomeView(),
       );
   }
 }

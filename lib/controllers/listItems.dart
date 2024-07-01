@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
-import 'debitClass.dart';
+class DebitListManager {
+  List<Map<String, String>> _debitList = [
+    {'title': 'Transaction', 'price': 'Rs 10,000','date':'08/01/23'},
+    {'title': 'Grocery', 'price': 'Rs 14,000','date':'08/01/23'},
+    {'title': 'Shopping', 'price': 'Rs 15,000','date':'08/01/23'},
+    {'title': 'Utilities', 'price': 'Rs 20,000','date':'08/01/23'},
+    {'title': 'Rent', 'price': 'Rs 30,000','date':'08/01/23'},
+    {'title': 'Transportation', 'price': 'Rs 5,000','date':'08/01/23'},
+    {'title': 'Health', 'price': 'Rs 5,000','date':'08/01/23'},
+  ];
 
-final List<DebitItem> debitList = [
-  DebitItem(title: 'Transaction', price: 'Rs 10,000'),
-  DebitItem(title: 'Grocery', price: 'Rs 14,000'),
-  DebitItem(title: 'Shopping', price: 'Rs 15,000'),
-  DebitItem(title: 'Utilities', price: 'Rs 20,000'),
-  DebitItem(title: 'Rent', price: 'Rs 30,000'),
-  DebitItem(title: 'Transportation', price: 'Rs 5,000'),
-  DebitItem(title: 'Health', price: 'Rs 5,000'),
-];
+  List<Map<String, String>> get debitList => _debitList;
+
+  void addDebitItem(Map<String, String> newItem) {
+    _debitList.add(newItem);
+  }
+}
+
+final DebitListManager debitListManager = DebitListManager();

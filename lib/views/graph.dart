@@ -10,57 +10,67 @@ class GraphView extends StatefulWidget {
 }
 
 class _GraphViewState extends State<GraphView> {
-  List<double> monthySum = [26, 21, 65.42, 45.50, 50.20, 52.99, 35.10];
+  List<double> monthySum = [35000, 31000, 60000, 42000, 45000, 32000, 38000];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: colorGradient.colorsScaffold,
-        ),
-        child: Scaffold(
-            backgroundColor: Colors.transparent,
-            extendBodyBehindAppBar: true,
-            appBar: AppBar(
-              forceMaterialTransparency: true,
-              leading: const Text(
-                "Cards",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: Colors.black38),
-              ),
-              actions: [
-                Container(
-                  height: 60,
-                  width: 60,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.white.withOpacity(0.2),
-                  ),
-                  child: const Icon(Icons.arrow_back, color: Colors.black),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 25.0),
+      child: SafeArea(
+        child: Container(
+          color: Colors.white54,
+          child: Scaffold(
+              backgroundColor: Colors.transparent,
+              extendBodyBehindAppBar: true,
+              appBar: AppBar(
+                forceMaterialTransparency: true,
+                title: const Text(
+                  "Graph",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Colors.black),
                 ),
-              ],
-            ),
-            body: SafeArea(
-                child: Column(
-                  children: [
-                    SizedBox(height: 20,),
-                    Container(
-                      height: 250,
+                actions: [
+                  Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.white.withOpacity(0.2),
+                    ),
+                    child: const Icon(Icons.arrow_back, color: Colors.black),
+                  ),
+                ],
+              ),
+              body: SafeArea(
+                  child: Column(
+                children: [
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                      height: 255,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white38
-                      ),
-                        child: Center(
-                          child: SizedBox(
-                              height: 240,
-                              child: MyBarGraph(
-                                monthlySummary: monthySum,
-                              )),
-                        )),
-                  ],
-                ))),
+                          borderRadius: BorderRadius.circular(20),
+
+                          color: Colors.grey),
+                      child: Column(
+                        children: [
+                          Row(children: [
+                            Container(decoration: BoxDecoration(),),
+                            Text('Expense',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
+
+                          ],),
+                           SizedBox(
+                                height: 210,
+                                child: MyBarGraph(
+                                  monthlySummary: monthySum,
+                                )),
+                        ],
+                      )),
+                ],
+              ))),
+        ),
       ),
     );
   }
