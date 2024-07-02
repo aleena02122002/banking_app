@@ -1,4 +1,4 @@
-import 'package:application/controllers/textEditting.dart';
+import 'package:application/utils/textEditting.dart';
 import 'package:application/views/home.dart';
 import 'package:application/views/homePage.dart';
 import 'package:application/views/register.dart';
